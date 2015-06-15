@@ -26,7 +26,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import dario.banner.R;
@@ -37,7 +36,6 @@ public class BannerRenderer extends SurfaceView implements SurfaceHolder.Callbac
     public void updateSimulatedValues(){
         bannerView.setOffset(frameCounter);
     }
-
 
 
     /**
@@ -141,6 +139,7 @@ public class BannerRenderer extends SurfaceView implements SurfaceHolder.Callbac
         boolean isAdding = true;
 
         int max = 120;
+        
         Vibrator v = (Vibrator) App.getAppContext().getSystemService(Context.VIBRATOR_SERVICE);
 
 
@@ -175,7 +174,7 @@ public class BannerRenderer extends SurfaceView implements SurfaceHolder.Callbac
     }
 
     private static final String TAG = BannerRenderer.class.getSimpleName();
-    private static final int REFRESH_RATE_FPS =60;
+    private static final int REFRESH_RATE_FPS = 60;
     private static final long FRAME_TIME_MILLIS = TimeUnit.SECONDS.toMillis(1) / REFRESH_RATE_FPS;
     private SurfaceHolder mHolder;
     private RenderThread mRenderThread;
